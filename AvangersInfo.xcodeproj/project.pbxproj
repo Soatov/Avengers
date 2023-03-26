@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		18CC0FCC29D04A8F0073D5D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FCB29D04A8F0073D5D6 /* AppDelegate.swift */; };
 		18CC0FCE29D04A8F0073D5D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FCD29D04A8F0073D5D6 /* SceneDelegate.swift */; };
-		18CC0FD029D04A8F0073D5D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FCF29D04A8F0073D5D6 /* ViewController.swift */; };
+		18CC0FD029D04A8F0073D5D6 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FCF29D04A8F0073D5D6 /* WelcomePage.swift */; };
 		18CC0FD329D04A8F0073D5D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CC0FD129D04A8F0073D5D6 /* Main.storyboard */; };
 		18CC0FD529D04A910073D5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CC0FD429D04A910073D5D6 /* Assets.xcassets */; };
 		18CC0FD829D04A910073D5D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CC0FD629D04A910073D5D6 /* LaunchScreen.storyboard */; };
+		18CC0FE329D04BB70073D5D6 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FE229D04BB70073D5D6 /* MainPage.swift */; };
+		207AD0CBD688358BE0A610B8 /* Pods_AvangersInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B813A982A4113504776B81AA /* Pods_AvangersInfo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18CC0FC829D04A8F0073D5D6 /* AvangersInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvangersInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CC0FCB29D04A8F0073D5D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18CC0FCD29D04A8F0073D5D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18CC0FCF29D04A8F0073D5D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18CC0FCF29D04A8F0073D5D6 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		18CC0FD229D04A8F0073D5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18CC0FD429D04A910073D5D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18CC0FD729D04A910073D5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18CC0FD929D04A910073D5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18CC0FE229D04BB70073D5D6 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		2108E4EBC286E80C04200F34 /* Pods-AvangersInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvangersInfo.debug.xcconfig"; path = "Target Support Files/Pods-AvangersInfo/Pods-AvangersInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		B813A982A4113504776B81AA /* Pods_AvangersInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvangersInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86F15A81F4367B2799481EC /* Pods-AvangersInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvangersInfo.release.xcconfig"; path = "Target Support Files/Pods-AvangersInfo/Pods-AvangersInfo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207AD0CBD688358BE0A610B8 /* Pods_AvangersInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				18CC0FCA29D04A8F0073D5D6 /* AvangersInfo */,
 				18CC0FC929D04A8F0073D5D6 /* Products */,
+				A7228968EA2A5F9257DDD0E5 /* Pods */,
+				F9918F86B8AF3873541CFA90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +65,57 @@
 		18CC0FCA29D04A8F0073D5D6 /* AvangersInfo */ = {
 			isa = PBXGroup;
 			children = (
-				18CC0FCB29D04A8F0073D5D6 /* AppDelegate.swift */,
-				18CC0FCD29D04A8F0073D5D6 /* SceneDelegate.swift */,
-				18CC0FCF29D04A8F0073D5D6 /* ViewController.swift */,
-				18CC0FD129D04A8F0073D5D6 /* Main.storyboard */,
-				18CC0FD429D04A910073D5D6 /* Assets.xcassets */,
-				18CC0FD629D04A910073D5D6 /* LaunchScreen.storyboard */,
+				18CC0FE029D04B4B0073D5D6 /* View */,
+				18CC0FDF29D04B400073D5D6 /* App */,
 				18CC0FD929D04A910073D5D6 /* Info.plist */,
+				18CC0FE129D04B630073D5D6 /* Resources */,
 			);
 			path = AvangersInfo;
+			sourceTree = "<group>";
+		};
+		18CC0FDF29D04B400073D5D6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				18CC0FCB29D04A8F0073D5D6 /* AppDelegate.swift */,
+				18CC0FCD29D04A8F0073D5D6 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		18CC0FE029D04B4B0073D5D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18CC0FCF29D04A8F0073D5D6 /* WelcomePage.swift */,
+				18CC0FE229D04BB70073D5D6 /* MainPage.swift */,
+				18CC0FD129D04A8F0073D5D6 /* Main.storyboard */,
+				18CC0FD629D04A910073D5D6 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18CC0FE129D04B630073D5D6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18CC0FD429D04A910073D5D6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7228968EA2A5F9257DDD0E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2108E4EBC286E80C04200F34 /* Pods-AvangersInfo.debug.xcconfig */,
+				F86F15A81F4367B2799481EC /* Pods-AvangersInfo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F9918F86B8AF3873541CFA90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B813A982A4113504776B81AA /* Pods_AvangersInfo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18CC0FDC29D04A910073D5D6 /* Build configuration list for PBXNativeTarget "AvangersInfo" */;
 			buildPhases = (
+				528E2028E5B99096CC6A806D /* [CP] Check Pods Manifest.lock */,
 				18CC0FC429D04A8F0073D5D6 /* Sources */,
 				18CC0FC529D04A8F0073D5D6 /* Frameworks */,
 				18CC0FC629D04A8F0073D5D6 /* Resources */,
+				1347B84E00C2484EB84C9F6F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +186,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1347B84E00C2484EB84C9F6F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvangersInfo/Pods-AvangersInfo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvangersInfo/Pods-AvangersInfo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AvangersInfo/Pods-AvangersInfo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		528E2028E5B99096CC6A806D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvangersInfo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18CC0FC429D04A8F0073D5D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18CC0FD029D04A8F0073D5D6 /* ViewController.swift in Sources */,
+				18CC0FD029D04A8F0073D5D6 /* WelcomePage.swift in Sources */,
 				18CC0FCC29D04A8F0073D5D6 /* AppDelegate.swift in Sources */,
 				18CC0FCE29D04A8F0073D5D6 /* SceneDelegate.swift in Sources */,
+				18CC0FE329D04BB70073D5D6 /* MainPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +378,7 @@
 		};
 		18CC0FDD29D04A910073D5D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2108E4EBC286E80C04200F34 /* Pods-AvangersInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +407,7 @@
 		};
 		18CC0FDE29D04A910073D5D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F86F15A81F4367B2799481EC /* Pods-AvangersInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
