@@ -17,14 +17,15 @@ class HeroInfoCollectionViewCell: UICollectionViewCell {
     
     let name       = UILabel()
     let nameLabel  = UILabel()
-    let decription = UILabel()
+    let decriptionLabel = UILabel()
+    let decriptions = UILabel()
     let image      = UIImageView()
     
 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .gray
+        
         setCellItems()
         setScrollView()
     }
@@ -40,7 +41,7 @@ class HeroInfoCollectionViewCell: UICollectionViewCell {
         }
         scrollView.addSubview(contentsView)
         contentsView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(self)
         }
     }
     func setCellItems(){
@@ -48,27 +49,41 @@ class HeroInfoCollectionViewCell: UICollectionViewCell {
         image.image = UIImage(named: "hulk")
         image.snp.makeConstraints { make in
             make.left.top.equalToSuperview()
-            make.height.equalTo(contentsView.snp.height).multipliedBy(0.5)
-            make.width.equalTo(contentsView.snp.width).multipliedBy(0.5)
+            make.height.equalTo(400)
+            make.width.equalTo(contentsView.snp.width)
         }
-//        contentsView.addSubview(nameLabel)
-//        nameLabel.text = "Name:"
-//        nameLabel.font = UIFont.systemFont(ofSize: 18)
-//        name.snp.makeConstraints { make in
-//            make.left.equalTo(image.snp.right).offset(5)
-//            make.top.equalTo(image.snp.top).offset(10)
-//            make.width.equalTo(image.snp.width).multipliedBy(0.5)
-//            make.height.equalTo(20)
-//            
-//        }
-//        contentsView.addSubview(name)
-//        name.text = "3-D Man"
-//        name.font = UIFont.systemFont(ofSize: 18)
-//        name.snp.makeConstraints { make in
-//            make.left.equalTo(nameLabel.snp.right).offset(2)
-//            make.top.equalTo(nameLabel.snp.top)
-//            make.height.equalTo(nameLabel.snp.height)
-//            make.width.equalTo(image.snp.width).multipliedBy(0.4)
-//        }
+        contentsView.addSubview(nameLabel)
+        nameLabel.text = "Name:"
+        nameLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        nameLabel.snp.makeConstraints { make in
+            make.left.equalTo(image.snp.left).offset(5)
+            make.top.equalTo(image.snp.bottom).offset(5)
+        }
+        contentsView.addSubview(name)
+        name.text = "3-D Man"
+        name.font = UIFont.systemFont(ofSize: 18)
+        name.snp.makeConstraints { make in
+            make.left.equalTo(nameLabel.snp.right).offset(10)
+            make.top.equalTo(nameLabel.snp.top)
+        }
+        contentsView.addSubview(decriptionLabel)
+        decriptionLabel.text = "Description:"
+        decriptionLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        decriptionLabel.snp.makeConstraints { make in
+            make.left.equalTo(nameLabel.snp.left)
+            make.top.equalTo(nameLabel.snp.bottom).offset(5)
+        }
+        contentsView.addSubview(decriptions)
+        decriptions.text = """
+        Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!
+        """
+        decriptions.font = UIFont.systemFont(ofSize: 18)
+        decriptions.numberOfLines = 0
+        decriptions.snp.makeConstraints { make in
+            make.left.equalTo(decriptionLabel.snp.right).offset(10)
+            make.top.equalTo(decriptionLabel.snp.top)
+            make.right.equalToSuperview().inset(10)
+        }
+        
     }
 }

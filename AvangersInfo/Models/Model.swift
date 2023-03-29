@@ -24,7 +24,7 @@ struct DataClass: Codable {
 struct Result: Codable {
     let id: Int
     let name, description: String
-    let modified: Date
+    let modified: String
     let thumbnail: Thumbnail
     let resourceURI: String
     let comics, series: Comics

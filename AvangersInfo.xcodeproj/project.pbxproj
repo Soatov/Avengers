@@ -11,6 +11,7 @@
 		18C8083929D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083829D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift */; };
 		18C8083C29D183EA0028CBFA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083B29D183EA0028CBFA /* Model.swift */; };
 		18C8083F29D185E10028CBFA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083E29D185E10028CBFA /* ApiService.swift */; };
+		18C8084129D411B00028CBFA /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8084029D411B00028CBFA /* HeroesViewModel.swift */; };
 		18CC0FCC29D04A8F0073D5D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FCB29D04A8F0073D5D6 /* AppDelegate.swift */; };
 		18CC0FCE29D04A8F0073D5D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FCD29D04A8F0073D5D6 /* SceneDelegate.swift */; };
 		18CC0FD029D04A8F0073D5D6 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC0FCF29D04A8F0073D5D6 /* WelcomePage.swift */; };
@@ -26,6 +27,7 @@
 		18C8083829D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		18C8083B29D183EA0028CBFA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		18C8083E29D185E10028CBFA /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		18C8084029D411B00028CBFA /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
 		18CC0FC829D04A8F0073D5D6 /* AvangersInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvangersInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CC0FCB29D04A8F0073D5D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18CC0FCD29D04A8F0073D5D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
+		18C8084229D411BF0028CBFA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18C8084029D411B00028CBFA /* HeroesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		18CC0FBF29D04A8F0073D5D6 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		18CC0FCA29D04A8F0073D5D6 /* AvangersInfo */ = {
 			isa = PBXGroup;
 			children = (
+				18C8084229D411BF0028CBFA /* ViewModel */,
 				18C8083D29D185C90028CBFA /* Api */,
 				18C8083A29D183D70028CBFA /* Models */,
 				18C8083329D156140028CBFA /* Cell */,
@@ -273,6 +284,7 @@
 				18C8083929D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift in Sources */,
 				18CC0FD029D04A8F0073D5D6 /* WelcomePage.swift in Sources */,
 				18CC0FCC29D04A8F0073D5D6 /* AppDelegate.swift in Sources */,
+				18C8084129D411B00028CBFA /* HeroesViewModel.swift in Sources */,
 				18C8083529D156360028CBFA /* HeroesCollectionViewCell.swift in Sources */,
 				18CC0FCE29D04A8F0073D5D6 /* SceneDelegate.swift in Sources */,
 				18C8083F29D185E10028CBFA /* ApiService.swift in Sources */,

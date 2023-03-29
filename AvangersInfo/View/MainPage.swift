@@ -10,7 +10,7 @@ import SnapKit
 
 class MainPage: UIViewController {
     
-    var apiService = ApiService()
+    private var viewModel = HeroesViewModel()
     
     var heroesCollectionView : UICollectionView?
     var heroInfoCollectionView : UICollectionView?
@@ -21,12 +21,10 @@ class MainPage: UIViewController {
         setNavigations()
         
         setHeroesCollectionView()
-        
-        apiService.getHeroesData { (result) in
-            print(result)
-        }
-        
+        loadHeroesData()
     }
+        
+    
     
     func setNavigations(){
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(DismissSelf))
@@ -52,7 +50,7 @@ class MainPage: UIViewController {
             make.height.equalTo(view.snp.height).multipliedBy(0.25)
         }
         heroesCollectionView.delegate = self
-        heroesCollectionView.dataSource = self
+//        heroesCollectionView.dataSource = self
         
         let layout2 = UICollectionViewFlowLayout()
         layout2.scrollDirection = .vertical
@@ -75,14 +73,19 @@ class MainPage: UIViewController {
         self.heroesCollectionView = heroesCollectionView
         self.heroInfoCollectionView = heroInfoCollectionView
     }
-    
+    private func loadHeroesData (){
+        viewModel.fetchHeroesData { [weak self] in
+            self?.heroesCollectionView?.dataSource = self
+            self?.heroesCollectionView?.reloadData()
+        }
+    }
     
    
 }
 extension MainPage: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == heroesCollectionView){
-            return 10
+            return viewModel.numberOfRowsInSection(section: section)
         }else{
             return 1
         }
@@ -91,6 +94,8 @@ extension MainPage: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if (collectionView == heroesCollectionView){
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: HeroesCollectionViewCell.identifier, for: indexPath) as! HeroesCollectionViewCell
+            let hero = viewModel.cellForRowAt(indexPath: indexPath)
+            cell.setCellWithValueOf(hero)
             return cell
         }else{
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: HeroInfoCollectionViewCell.identifier, for: indexPath) as!

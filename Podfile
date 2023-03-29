@@ -8,4 +8,5 @@ target 'AvangersInfo' do
   # Pods for AvangersInfo
 
 	pod 'SnapKit'
+	pod 'Kingfisher'
 end

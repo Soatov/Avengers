@@ -7,16 +7,32 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class HeroesCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "HeroesCollectionViewCell"
     
-    let heroName = UILabel()
-    let heroImage = UIImageView()
+    var heroName = UILabel()
+    var heroImage = UIImageView()
+    
+    private var urlString: String = ""
+    var url = URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg")
+
+    
+    func setCellWithValueOf(_ hero:Result){
+        updateUI(name: hero.name)
+        
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setCellItems()
+        
+    }
+    private func updateUI(name: String? ) {
+        self.heroName.text = name
+//        self.url = URL(string: "\(String(describing: imageURL)).jpg?")
         
     }
     
@@ -26,7 +42,7 @@ class HeroesCollectionViewCell: UICollectionViewCell {
     func setCellItems(){
     
         self.addSubview(heroImage)
-        heroImage.image = UIImage(named: "hulk")
+        heroImage.kf.setImage(with: url)
         heroImage.layer.cornerRadius = 20
         heroImage.layer.borderColor = UIColor.black.cgColor
         heroImage.layer.borderWidth = 1
