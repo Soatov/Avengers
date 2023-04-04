@@ -14,14 +14,16 @@ class MainPage: UIViewController {
     
     var heroesCollectionView : UICollectionView?
     
-    let scrollView = UIScrollView()
-    let contentView = UIView()
-    let nameLabel = UILabel()
-    var selectedHeroImage = UIImageView()
-    let nameTitle      = UILabel()
-    var selectedHeroName = UILabel()
-    let descriptionLabel = UILabel()
-    var selectedHeroDescription  = UILabel()
+    let scrollView                = UIScrollView()
+    let contentView               = UIView()
+    let nameLabel                 = UILabel()
+    var selectedHeroImage         = UIImageView()
+    let nameTitle                 = UILabel()
+    var selectedHeroName          = UILabel()
+    let descriptionLabel          = UILabel()
+    var selectedHeroDescription   = UILabel()
+    let modifiedData              = UILabel()
+    var selectedHeroModifiedData  = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,19 +70,18 @@ class MainPage: UIViewController {
         }
     }
     func setScrollView (){
+        
         view.addSubview(scrollView)
         scrollView.showsVerticalScrollIndicator = false
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.centerX.equalToSuperview()
-            
         }
+        
         scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.edges.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalToSuperview().priority(700)
+            make.edges.equalTo(scrollView.snp.edges)
+            make.width.equalTo(scrollView.snp.width)
+            make.height.equalToSuperview().multipliedBy(1.5)
         }
         contentView.addSubview(selectedHeroImage)
         selectedHeroImage.image = UIImage(named: "3d")
@@ -123,8 +124,23 @@ class MainPage: UIViewController {
             make.left.equalTo(selectedHeroName.snp.left)
             make.right.equalTo(selectedHeroName.snp.right)
             make.top.equalTo(descriptionLabel.snp.top)
-            
-            
+        }
+        contentView.addSubview(modifiedData)
+        modifiedData.text = "Modified:"
+        modifiedData.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        modifiedData.snp.makeConstraints { make in
+            make.left.equalTo(descriptionLabel.snp.left)
+            make.top.equalTo(selectedHeroDescription.snp.bottom).offset(30)
+            make.width.equalTo(descriptionLabel.snp.width)
+            make.height.equalTo(descriptionLabel.snp.height)
+        }
+        contentView.addSubview(selectedHeroModifiedData)
+        selectedHeroModifiedData.font = UIFont.systemFont(ofSize: 18)
+        selectedHeroModifiedData.numberOfLines = 0
+        selectedHeroModifiedData.snp.makeConstraints { make in
+            make.left.equalTo(selectedHeroDescription.snp.left)
+            make.top.equalTo(modifiedData.snp.top)
+            make.width.equalTo(selectedHeroDescription.snp.width)
         }
         
         
@@ -151,17 +167,28 @@ extension MainPage: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
         return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.width/4 )
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-        selectedHeroName.text = viewModel.cellForRowAt(indexPath: indexPath).name
-        selectedHeroDescription.text = viewModel.cellForRowAt(indexPath: indexPath).description
-        let imageUR = viewModel.cellForRowAt(indexPath: indexPath).thumbnail.path
-        let url = URL(string: "\(imageUR).jpg")
-        selectedHeroImage.kf.setImage(with: url)
         
-        
-        reloadInputViews()
-       
+            selectedHeroName.text = viewModel.cellForRowAt(indexPath: indexPath).name
+            selectedHeroDescription.text = viewModel.cellForRowAt(indexPath: indexPath).description
+            let imageUR = viewModel.cellForRowAt(indexPath: indexPath).thumbnail.path
+            let imagetype = viewModel.cellForRowAt(indexPath: indexPath).thumbnail.thumbnailExtension
+            let url = URL(string: "\(imageUR).\(imagetype)")
+            selectedHeroImage.kf.setImage(with: url)
+            let stringDate = viewModel.cellForRowAt(indexPath: indexPath).modified
+            let expectedFormat = Date.ISO8601FormatStyle()
+            let date = try! Date(stringDate, strategy: expectedFormat)
+            let removeLastWord = "\(date)".components(separatedBy: "+").dropLast().joined(separator: " ")
+            selectedHeroModifiedData.text = removeLastWord
+            reloadInputViews()
+
         }
-   
+   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print("IndexPath\(indexPath)")
+       if indexPath.item == (viewModel.numberOfRowsInSection(section: indexPath.section)-1){
+           viewModel.fetchHeroesData {
+               collectionView.reloadData()
+           }
+       }
+    }
     
 }

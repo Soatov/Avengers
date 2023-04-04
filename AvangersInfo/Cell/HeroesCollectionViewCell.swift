@@ -17,7 +17,7 @@ class HeroesCollectionViewCell: UICollectionViewCell {
     var heroImage = UIImageView()
     
     func setCellWithValueOf(_ hero:Result){
-        updateUI(name: hero.name, imageURL: hero.thumbnail.path)
+        updateUI(name: hero.name, imageURL: hero.thumbnail.path, imageType: hero.thumbnail.thumbnailExtension.rawValue)
     }
     
     override init(frame: CGRect) {
@@ -25,9 +25,9 @@ class HeroesCollectionViewCell: UICollectionViewCell {
         setCellItems()
     }
     
-    private func updateUI(name: String, imageURL: String ) {
+    private func updateUI(name: String, imageURL: String, imageType: String ) {
         self.heroName.text = name
-        let url = URL(string: "\(imageURL).jpg")
+        let url = URL(string: "\(imageURL).\(imageType)")
         heroImage.kf.setImage(with: url)
     }
     

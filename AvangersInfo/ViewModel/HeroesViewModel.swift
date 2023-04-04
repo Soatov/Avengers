@@ -13,10 +13,10 @@ class HeroesViewModel {
     private var heroes     = [Result] ()
     
     func fetchHeroesData(completion: @escaping() -> ()){
-        apiService.getHeroesData() { [weak self] (result) in
+        apiService.getHeroesData(offset: heroes.count) { [weak self] (result) in
             switch result{
             case .success(let listOf):
-                self?.heroes = listOf.data.results
+                self?.heroes += listOf.data.results
                 completion()
             case.failure(let error):
                 print("Error processing json data: \(error)")
@@ -33,4 +33,5 @@ class HeroesViewModel {
     func cellForRowAt (indexPath: IndexPath) -> Result {
         return heroes[indexPath.row]
     }
+    
 }
