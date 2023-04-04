@@ -16,24 +16,19 @@ class HeroesCollectionViewCell: UICollectionViewCell {
     var heroName = UILabel()
     var heroImage = UIImageView()
     
-    private var urlString: String = ""
-    var url = URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg")
-
-    
     func setCellWithValueOf(_ hero:Result){
-        updateUI(name: hero.name)
-        
+        updateUI(name: hero.name, imageURL: hero.thumbnail.path)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setCellItems()
-        
     }
-    private func updateUI(name: String? ) {
+    
+    private func updateUI(name: String, imageURL: String ) {
         self.heroName.text = name
-//        self.url = URL(string: "\(String(describing: imageURL)).jpg?")
-        
+        let url = URL(string: "\(imageURL).jpg")
+        heroImage.kf.setImage(with: url)
     }
     
     required init?(coder: NSCoder) {
@@ -42,8 +37,7 @@ class HeroesCollectionViewCell: UICollectionViewCell {
     func setCellItems(){
     
         self.addSubview(heroImage)
-        heroImage.kf.setImage(with: url)
-        heroImage.layer.cornerRadius = 20
+        heroImage.backgroundColor = .blue
         heroImage.layer.borderColor = UIColor.black.cgColor
         heroImage.layer.borderWidth = 1
         heroImage.snp.makeConstraints { make in

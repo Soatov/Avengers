@@ -13,7 +13,7 @@ class HeroesViewModel {
     private var heroes     = [Result] ()
     
     func fetchHeroesData(completion: @escaping() -> ()){
-        apiService.getHeroesData { [weak self] (result) in
+        apiService.getHeroesData() { [weak self] (result) in
             switch result{
             case .success(let listOf):
                 self?.heroes = listOf.data.results

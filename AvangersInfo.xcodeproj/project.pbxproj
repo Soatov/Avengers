@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18C8083529D156360028CBFA /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083429D156360028CBFA /* HeroesCollectionViewCell.swift */; };
-		18C8083929D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083829D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift */; };
 		18C8083C29D183EA0028CBFA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083B29D183EA0028CBFA /* Model.swift */; };
 		18C8083F29D185E10028CBFA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083E29D185E10028CBFA /* ApiService.swift */; };
 		18C8084129D411B00028CBFA /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8084029D411B00028CBFA /* HeroesViewModel.swift */; };
@@ -24,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		18C8083429D156360028CBFA /* HeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewCell.swift; sourceTree = "<group>"; };
-		18C8083829D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		18C8083B29D183EA0028CBFA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		18C8083E29D185E10028CBFA /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		18C8084029D411B00028CBFA /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				18C8083429D156360028CBFA /* HeroesCollectionViewCell.swift */,
-				18C8083829D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -281,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C8083C29D183EA0028CBFA /* Model.swift in Sources */,
-				18C8083929D16DAC0028CBFA /* HeroInfoCollectionViewCell.swift in Sources */,
 				18CC0FD029D04A8F0073D5D6 /* WelcomePage.swift in Sources */,
 				18CC0FCC29D04A8F0073D5D6 /* AppDelegate.swift in Sources */,
 				18C8084129D411B00028CBFA /* HeroesViewModel.swift in Sources */,
