@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18A2570529DD47AF006D8869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2570429DD47AF006D8869 /* ContentView.swift */; };
+		18A2570929DD4D5E006D8869 /* HeroesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2570829DD4D5E006D8869 /* HeroesCollectionView.swift */; };
 		18C8083529D156360028CBFA /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083429D156360028CBFA /* HeroesCollectionViewCell.swift */; };
 		18C8083C29D183EA0028CBFA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083B29D183EA0028CBFA /* Model.swift */; };
 		18C8083F29D185E10028CBFA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8083E29D185E10028CBFA /* ApiService.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18A2570429DD47AF006D8869 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		18A2570829DD4D5E006D8869 /* HeroesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionView.swift; sourceTree = "<group>"; };
 		18C8083429D156360028CBFA /* HeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewCell.swift; sourceTree = "<group>"; };
 		18C8083B29D183EA0028CBFA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		18C8083E29D185E10028CBFA /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				18CC0FCF29D04A8F0073D5D6 /* WelcomePage.swift */,
 				18CC0FE229D04BB70073D5D6 /* MainPage.swift */,
+				18A2570429DD47AF006D8869 /* ContentView.swift */,
+				18A2570829DD4D5E006D8869 /* HeroesCollectionView.swift */,
 				18CC0FD129D04A8F0073D5D6 /* Main.storyboard */,
 				18CC0FD629D04A910073D5D6 /* LaunchScreen.storyboard */,
 			);
@@ -279,9 +285,11 @@
 			files = (
 				18C8083C29D183EA0028CBFA /* Model.swift in Sources */,
 				18CC0FD029D04A8F0073D5D6 /* WelcomePage.swift in Sources */,
+				18A2570929DD4D5E006D8869 /* HeroesCollectionView.swift in Sources */,
 				18CC0FCC29D04A8F0073D5D6 /* AppDelegate.swift in Sources */,
 				18C8084129D411B00028CBFA /* HeroesViewModel.swift in Sources */,
 				18C8083529D156360028CBFA /* HeroesCollectionViewCell.swift in Sources */,
+				18A2570529DD47AF006D8869 /* ContentView.swift in Sources */,
 				18CC0FCE29D04A8F0073D5D6 /* SceneDelegate.swift in Sources */,
 				18C8083F29D185E10028CBFA /* ApiService.swift in Sources */,
 				18CC0FE329D04BB70073D5D6 /* MainPage.swift in Sources */,
